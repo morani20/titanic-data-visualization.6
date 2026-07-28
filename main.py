@@ -121,8 +121,8 @@ pclass_summary = (
     titanic["pclass"]
     .value_counts()
     .reset_index()
-    .rename(columns={"index": "pclass", "pclass": "count"})
 )
+pclass_summary.columns = ["pclass", "count"]
 
 # 1. Interactive Bar Chart of Passenger Counts by Pclass
 fig1 = px.bar(
@@ -132,7 +132,6 @@ fig1 = px.bar(
     labels={"pclass": "Passenger Class", "count": "Passenger Count"},
     title="<b>Interactive Passenger Count by Ticket Class</b>",
     color="pclass",
-    color_continuous_scale="Blues",
 )
 fig1.update_layout(template="plotly_white")
 fig1.show()
@@ -218,7 +217,7 @@ titanic["family_size"] = titanic["sibsp"] + titanic["parch"] + 1
 
 plt.figure(figsize=(8, 5))
 sns.barplot(
-    x="family_size", y="survived", data=titanic, ci=None, palette="viridis"
+    x="family_size", y="survived", data=titanic, errorbar=None, palette="viridis"
 )
 plt.title("Survival Rate by Family Size Onboard", fontsize=13, fontweight="bold")
 plt.xlabel("Family Size (Self + SibSp + Parch)")
@@ -232,7 +231,7 @@ sns.barplot(
     x="embarked",
     y="fare",
     data=titanic,
-    ci=None,
+    errorbar=None,
     palette="magma",
     order=["C", "Q", "S"],
 )
