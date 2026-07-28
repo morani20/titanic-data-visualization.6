@@ -4,12 +4,16 @@
 
 ## Table of Contents
 
-- [Titanic Dataset Analysis and Advanced Data Visualization](#titanic-dataset-analysis-and-advanced-data-visualization)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [System Requirements and Dependencies](#system-requirements-and-dependencies)
-    - [Prerequisites](#prerequisites)
-    - [Required Libraries](#required-libraries)
+- [Project Overview](#project-overview)
+- [System Requirements and Dependencies](#system-requirements-and-dependencies)
+- [Project Structure](#project-structure)
+- [Execution Steps](#execution-steps)
+- [Detailed Module Breakdowns](#detailed-module-breakdowns)
+  - [Part 1: Matplotlib Base Visualizations](#part-1-matplotlib-base-visualizations)
+  - [Part 2: Advanced Seaborn Visualizations](#part-2-advanced-seaborn-visualizations)
+  - [Part 3: Plotly Interactive Graphics](#part-3-plotly-interactive-graphics)
+- [Business Questions and Analytical Justifications](#business-questions-and-analytical-justifications)
+- [Generated Deliverables](#generated-deliverables)
 
 ---
 
