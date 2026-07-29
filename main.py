@@ -183,6 +183,7 @@ print(f"Successfully exported interactive scatter plot to '{output_filename}'.")
 print("\n=== PART 4: Real Business Questions Solutions ===")
 
 # --- Business Question 1 ---
+# هل سعر التذكرة بيختلف كثير بين الفئات الثلاث؟
 plt.figure(figsize=(8, 5))
 sns.boxplot(
     x="pclass", y="fare", data=titanic, showfliers=False, palette="Set3"
@@ -197,7 +198,12 @@ plt.ylabel("Fare ($)")
 plt.tight_layout()
 plt.show()
 
+print("\n--- Question 1 Answer & Justification ---")
+print("Answer: نعم، هناك تباين واضع في الأسعار؛ حيث تمتلك الفئة الأولى (Pclass 1) أعلى متوسط وأعلى مدى لأسعار التذاكر مقارنة بالفئتين الثانية والثالثة.")
+print("Justification: تم اختيار Boxplot لأنه أنسب رسم لمقارنة توزيع قيمة رقمية مستمرة (Fare) عبر فئات مختلفة (Pclass) والكشف عن الوسيط والتباين بدون التأثر الشديد بالقيم الشاذة.")
+
 # --- Business Question 2 ---
+# شو نسبة الناجين والغير ناجين بشكل عام؟
 survived_counts = titanic["survived"].value_counts()
 plt.figure(figsize=(6, 6))
 plt.pie(
@@ -212,7 +218,12 @@ plt.title("Overall Proportion of Passenger Survival", fontsize=13, fontweight="b
 plt.tight_layout()
 plt.show()
 
+print("\n--- Question 2 Answer & Justification ---")
+print("Answer: نسبة غير الناجين (الوفيات) هي الأكبر وتملث 61.6%، بينما نسبة الناجين تمثل 38.4% من إجمالي الركاب.")
+print("Justification: تم اختيار Pie Chart لأنه يوضح بشكل دقيق النسبة المئوية للجزء من الكل (Proportions of a total).")
+
 # --- Business Question 3 ---
+# هل في علاقة بين حجم العائلة على متن السفينة واحتمال النجاة؟
 titanic["family_size"] = titanic["sibsp"] + titanic["parch"] + 1
 
 plt.figure(figsize=(8, 5))
@@ -225,7 +236,12 @@ plt.ylabel("Survival Probability")
 plt.tight_layout()
 plt.show()
 
+print("\n--- Question 3 Answer & Justification ---")
+print("Answer: العائلات المتوسطة (من 2 إلى 4 أفراد) كانت لديهم أعلى نسبة نجاة، بينما انخفضت فرصة النجاة للأفراد بمفردهم وللعائلات الكبيرة جداً.")
+print("Justification: تم اختيار Bar Chart لأنه الأفضل لمقارنة معدل أو احتمال النجاة (Survival Rate) وهو متغير بين 0 و1 عبر مجموعات منفصلة (أحجام العائلات).")
+
 # --- Business Question 4 ---
+# قارن متوسط سعر التذكرة بين ميناء الصعود المختلفة
 plt.figure(figsize=(7, 5))
 sns.barplot(
     x="embarked",
@@ -240,3 +256,7 @@ plt.xlabel("Port of Embarkation (C = Cherbourg, Q = Queenstown, S = Southampton)
 plt.ylabel("Mean Fare ($)")
 plt.tight_layout()
 plt.show()
+
+print("\n--- Question 4 Answer & Justification ---")
+print("Answer: ركاب ميناء Cherbourg (C) دفعوا أعلى متوسط لسعر التذكرة مقارنة بالموانئ الأخرى (Southampton و Queenstown).")
+print("Justification: تم اختيار Bar Chart للمتوسطات لأنه الأنسب لمقارنة قيمة رقمية واحدة (Mean Fare) بين فئات الموانئ المختلفة.")
